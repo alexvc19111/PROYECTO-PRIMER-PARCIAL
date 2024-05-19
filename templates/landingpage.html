@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/landingpage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <title>Sistema de control de asistencias</title>
+</head>
+
+<body>
+    <header>
+        <!-- Barra de navegacion -->
+        <nav class="menu">
+            <section class="menu__container">
+                <h1 class="menu__logo">SCAE</h1>
+
+
+                <ul class="menu__links">
+                    <li class="menu__item ">
+                        <a href="#" class="menu__link">Inicio</a>
+                    </li>
+
+
+                    <li class="menu__item menu__item--show">
+                        <a href="asistencia.html" class="menu__link">Asistencia<img src="../assets/arrow.svg" class="menu__arrow"></a>
+
+                        <ul class="menu__nesting">
+                            <li class="menu__inside">
+                                <a href="asistencia.html" class="menu__link menu__link--inside">Tomar asistencia</a>
+                            </li>
+                            <li class="menu__inside">
+                                <a href="asistencia.html" class="menu__link menu__link--inside">Ver historial</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a href="miscursos.html" class="menu__link">Mis Cursos<img src="../assets/arrow.svg" class="menu__arrow"></a>
+                        <ul class="menu__nesting">
+                            <li class="menu__inside">
+                                <a href="miscursos.html" class="menu__link menu__link--inside">Mis cursos</a>
+                            </li>
+                            <li class="menu__inside">
+                                <a href="miscursos.html" class="menu__link menu__link--inside">Gestionar cursos</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a href="#" class="menu__link"><i class="fa-solid fa-user-plus"></i><img
+                                src="../assets/arrow.svg" class="menu__arrow"></a>
+                        <ul class="menu__nesting">
+                            <li class="menu__inside">
+                                <!-- <a href="login.html" class="menu__link menu__link--inside">Iniciar sesion</a> -->
+                                <button class="menu__link menu__link--inside" id="show__lgn">Iniciar sesión</button>
+                            </li>
+                            <li class="menu__inside">
+                                <button class="menu__link menu__link--inside" id="show__rgs">Registrarse</button>
+                                <!-- <a href="registro.html" class="menu__link menu__link--inside">Registrarse</a> -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+            </div>
+        </nav>
+    </header>
+    <!-- Fin barra navegacion -->
+    <!-- popup__login -->
+    <div class="formularios">
+        <div class="Login__popup">
+            <div class="close__btn-lgn">&times;</div>
+
+            <h1>Iniciar sesion</h1>
+            <form action="" class="formulario" id='formulario__ini' method="post">
+                <div class="inputgroup">
+                    <!-- GRUPO EMAIL -->
+                    <div class="formulario__grupo" id="grupo__email-lgn">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email__lgn" placeholder="Ingrese su correo electrónico" />
+                        </div>
+                    </div>
+                    <!-- GRUPO CONSTRASENA -->
+                    <div class="formulario__grupo" id="grupo__pwd-lgn">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password__lgn" placeholder="Ingrese una contraseña" />
+                        </div>
+                    </div>
+                    <p>No tienes una cuenta?<a class="lgn-" >REGISTRATE AQUÍ!</a></p>
+                </div>
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor ingresa unas credenciales
+                        validas
+                    </p>
+                </div>
+                <!-- BOTON DE INICIAR SESION -->
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button class="formulario__btn" id="login__btn" type="submit"><i class="fa-solid fa-sign-in"></i>
+                        Ingresar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"></i>Inicio de sesion
+                        correcto, será dirigido a la página principal en 3 segundos...</p>
+                </div>
+                <!-- <button id="signin"type="submit"><i class="fa-solid fa-sign-in"></i> Ingresar</button> -->
+                <!-- <a href="landingpage.html" class="btn btn-info mr-2"><i class="fa-solid fa-sign-in"></i>Ingresar</a> -->
+
+            </form>
+        </div>
+    </div>
+    <!-- fin popup login -->
+    <!-- popup registro -->
+    <div class="formularios">
+        <div class="Registro__popup">
+            <div class="close__btn-rgs">&times;</div>
+
+            <h1>Registro</h1>
+            <form action="" class="formulario" id="formulario__rgs">
+                <div class="inputgroup__reg">
+                    <!-- Grupo: Nombre completo -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                placeholder="Ingrese su nombre completo ">
+                            <i class="formulario__validacion-estado fa-solid fa-star-of-life"></i>
+                        </div>
+                        <p class="formulario__input-error">El nombre tiene que ser de 4 a 40 dígitos y solo puede
+                            contener letras,
+                            espacios y acentos.</p>
+                    </div>
+                    <!-- Grupo: Email -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" class="formulario__input" name="correo" id="correo"
+                                placeholder="Ingrese su correo electrónico">
+                            <i class="formulario__validacion-estado fa-solid fa-solid fa-star-of-life"></i>
+                        </div>
+                        <p class="formulario__input-error">Debe de ingresar un correo valido</p>
+                    </div>
+                    <!-- Grupo: Password -->
+                    <div class="formulario__grupo" id="grupo__password">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" class="formulario__input" name="password" id="password"
+                                placeholder="Ingrese una contraseña">
+                            <i class="formulario__validacion-estado fa-solid fa-solid fa-star-of-life"></i>
+                        </div>
+                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                    </div>
+                    <!-- Grupo: Conf-Password -->
+                    <div class="formulario__grupo" id="grupo__password2">
+                        <div class="formulario__grupo-input">
+                            <i class="fa-solid fa-check"></i>
+                            <input type="password" class="formulario__input" name="password2" id="password2"
+                                placeholder="Confirme su contraseña">
+                            <i class="formulario__validacion-estado fa-solid fa-solid fa-star-of-life"></i>
+                        </div>
+                        <p class="formulario__input-error">Ambas contraseñas deben coincidir.</p>
+                    </div>
+                    <!-- <div class="prg"> <p>Ya tienes una cuenta? <u>INGRESA AQUÍ</u></div> -->
+                    <p>Ya tienes una cuenta?<a class="prg" >INGRESA AQUÍ!</a></p>
+                </div>
+
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                        correctamente.
+                    </p>
+                </div>
+                <!-- BOTON DE REGISTRARSE -->
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button class="formulario__btn" id="registro__btn" type="submit">Registrarse</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Registrado correctamente!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- fin popup registro -->
+    <div class="content">
+        <div class="title">
+            <h2>SISTEMA DE</h2>
+            <H2>CONTROL DE</H2>
+            <H2>ASISTENCIA</H2>
+            <hr>
+            <p>Bienvenido a su solución <br>  definitiva para la gestión <br>eficiente de la asistencia <br> estudiantil. </p>
+        </div>
+        <div class="img">
+            <img src="../img/asistencia.webp" alt="">
+        </div>
+    </div>
+    
+
+
+    <script src="../JS/landingpage.js"></script>
+</body>
+
+</html>
